@@ -1,0 +1,2 @@
+*.pkl filter=lfs diff=lfs merge=lfs -text
+convnextv2_thev1_best_for_good.pkl filter=lfs diff=lfs merge=lfs -text
