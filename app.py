@@ -35,4 +35,12 @@ def ask_doctor(question):
 # UI
 st.set_page_config(page_title="ปรึกษาหมอ AI", page_icon="🩺")
 st.title("🩺 ปรึกษาหมอ AI")
-user_question = st.text_input("อาการหรือคำถามของคุณ", placeh
+user_question = st.text_input("อาการหรือคำถามของคุณ", placeholder="เช่น ปวดหัวมาก ต้องทำยังไงดี?")
+
+if st.button("สอบถามหมอ AI"):
+    if user_question.strip():
+        with st.spinner("🧠 กำลังให้คำปรึกษา..."):
+            answer = ask_doctor(user_question)
+            st.success(answer)
+    else:
+        st.warning("⚠️ กรุณากรอกคำถามก่อนนะครับ")
